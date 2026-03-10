@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>온라인 프로필</title>
+
+<style>
+.container{
+    width:800px;
+    margin:50px auto;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;    
+    display:flex;
+    box-shadow:0 0 10px rgba(176, 11, 11, 0.2);
+}
+.left{
+    width:300px;
+    background:linear-gradient(#e85387,#e9509f);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+.profile{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:5px solid rgb(69, 203, 230);
+}
+.left h2{
+    margin-top:20px;
+}
+
+.info{
+    margin-top:20px;
+    font-size:14px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:rgb(67, 197, 223);
+    color:#040611;
+    font-weight:bold;
+    cursor:pointer;
+}
+.right{
+    flex:1;
+    padding:30px;
+}
+
+h3{
+    border-left:5px solid #de7d0f;
+    padding-left:10px;
+}
+
+.highlight{
+    background:yellow;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th{
+    background:#ee769c;
+    color:white;
+    padding:10px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:8px;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">   
+    <div class="left">
+
+        <img src="../../media/자두2.jpg.jpg" class="profile">
+
+        <h2>Zaduuu</h2>
+        <p>프로그래밍이 뭐죠</p>
+
+        <div class="info">
+             Kimpo, Korea <br><br>
+             test@naver.com
+        </div>
+
+        <h3>SNS</h3>
+
+        <button>클릭!</button>
+
+    </div>
+
+    <div class="right">
+
+        <h3>자기소개</h3>
+
+        <p>
+            <span class="highlight">프로그래밍</span>에 관심이 많습니다.<br>
+            현재 열심히 공부하며 코딩 중!
+        </p>
+
+        <h3>Experience</h3>
+
+        <ul>
+            <li>아주좋은 대학교
+                <ul>
+                    <li>응용프로그램 개발(C#)</li>
+                    <li>모바일 app 개발(안드로이드)</li>
+                    <li>반응형 웹</li>
+                </ul>
+            </li>
+
+            <li>꽤 괜찮은 컴퓨터학원
+                <ul>
+                    <li>Spring 기반 프로젝트 - 쇼핑몰</li>
+                    <li>Cloud 서비스를 이용한 배포</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>보유 기술</h3>
+
+        <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>HTML / CSS</li>
+        </ul>
+
+        <h3>Education</h3>
+
+        <table>
+
+            <tr>
+                <th>출신학교</th>
+                <th>전공</th>
+                <th>기간</th>
+                <th>구분</th>
+            </tr>
+
+            <tr>
+                <td>아주좋은 대학교</td>
+                <td>좋은학과</td>
+                <td>2010.3 ~ 2013.2</td>
+                <td>졸업</td>
+            </tr>
+
+            <tr>
+                <td>꽤좋은고등학교</td>
+                <td>-</td>
+                <td>2007.3 ~ 2009.2</td>
+                <td>졸업</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
