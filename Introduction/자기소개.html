@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>온라인 프로필</title>
+
+<style>
+
+#container{
+            width: 800px;
+            height: 20px auto;
+        }
+        #time {
+            font-size: 30px;
+            font-weight: bold;
+            color: palevioletred;
+            text-align: center;
+        }
+
+body{
+    background:#f3f4f8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container{
+    width:800px;
+    margin:60px auto;
+    background:white;
+    border-radius:15px;
+    display:flex;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+
+
+.left{
+    width:260px;
+    background:palevioletred;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px;
+}
+
+
+
+.profile{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:4px solid white;
+}
+
+
+
+.left h2{
+    margin-top:20px;
+}
+
+
+
+.info{
+    margin-top:20px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+
+
+button{
+    margin-top:25px;
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:#7a6ad8;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+
+.right{
+    width:540px;
+    padding:40px;
+}
+
+
+
+h3{
+    margin-top:25px;
+    color:#555;
+    border-bottom:2px solid #eee;
+    padding-bottom:5px;
+}
+
+
+
+.highlight{
+    background:#ffe3ec;
+    padding:2px 6px;
+    border-radius:4px;
+}
+
+
+
+ul{
+    margin-top:10px;
+}
+
+
+
+table{
+    width:100%;
+    
+    margin-top:15px;
+}
+
+th{
+    background:#a48df0;
+    color:white;
+    padding:10px;
+}
+
+td{
+    border-bottom:1px solid #eee;
+    padding:8px;
+    text-align:center;
+}
+.clock{
+    
+    padding:15px;
+    
+    text-align:center;
+
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:200px;
+
+}
+
+#date{
+    font-size:10px;
+    color:#666;
+}
+
+#time{
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+}
+.left{
+    width:260px;
+    
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+   
+    position:relative;   
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+  
+<div class="left">
+
+    <img src="../../media/자두2.jpg.jpg" class="profile">
+
+    <h2>Zaduuu</h2>
+    <p>코딩이 뭐죠...</p>
+
+    <div class="info">
+        Korea <br><br>
+        test@naver.com
+    </div>
+
+    <h3>???</h3>
+
+    <button>+</button>
+
+    <!-- 시계 -->
+    <div class="clock">
+        <div id="date"></div>
+        <div id="time"></div>
+    </div>
+
+</div>
+
+
+    
+
+    <div class="right">
+
+        
+
+        <h3>자기소개</h3>
+
+        
+
+        <p>
+            <span class="highlight">프로그래밍</span>에 관심이...<br>
+            현재 열심히 공부하며 코딩 중이긴 하나...
+        </p>
+
+
+        <h3>Experience</h3>
+
+        <ul>
+            <li>아주좋은 대학교
+                <ul>
+                    <li>응용프로그램 개발(C#)</li>
+                    <li>모바일 app 개발</li>
+                    <li>반응형 웹</li>
+                </ul>
+            </li>
+
+            <li>더조은 컴퓨터 학원
+                <ul>
+                    <li>Spring 쇼핑몰 프로젝트</li>
+                    <li>Cloud 배포 경험</li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <h3>보유 기술?</h3>
+
+        <ul>
+            <li>Java</li>
+            <li>Oracle</li>
+            <li>HTML / CSS</li>
+        </ul>
+
+
+        <h3>Education</h3>
+
+        <table>
+
+            <tr>
+                <th>출신학교</th>
+                <th>전공</th>
+                <th>기간</th>
+                <th>구분</th>
+            </tr>
+
+            <tr>
+                <td>아주좋은 대학교</td>
+                <td>좋은학과</td>
+                <td>2010.3 ~ 2013.2</td>
+                <td>졸업</td>
+            </tr>
+
+            <tr>
+                <td>꽤좋은고등학교</td>
+                <td>-</td>
+                <td>2007.3 ~ 2009.2</td>
+                <td>졸업</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+<script>
+    setInterval(() => {
+
+    let datetime = new Date();
+    let obj = document.querySelector("#time");
+
+    let year = datetime.getFullYear();
+    let month = datetime.getMonth() + 1;
+    let day = datetime.getDate();
+
+    let hour = datetime.getHours();
+    let minute = datetime.getMinutes();
+    let second = datetime.getSeconds();
+
+    if(minute < 10) minute = "0" + minute;
+    if(second < 10) second = "0" + second;
+
+    let time = year + "-" + month + "-" + day + " "
+             + hour + ":" + minute + ":" + second;
+
+    obj.innerHTML = time;
+
+}, 1000);
+</script>
+
