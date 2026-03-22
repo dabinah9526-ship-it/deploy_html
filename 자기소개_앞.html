@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>자기소개_1</title>
+
+    <link rel="stylesheet" href="자기소개_앞.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="title"></h1>
+        <p id="subText">Welcome 🤗</p>
+
+        <div class="buttons">
+            <button onclick="goAbout()">About Me</button>
+        </div>
+
+        <div id="content"></div>
+
+    </div>
+
+<script>
+    window.onload = function(){
+
+    let text = "Dabin's Portfolio";
+    let i = 0;
+    let target = document.getElementById("title");
+
+    target.innerHTML = "👩‍💻 ";
+
+    let typing = setInterval(function(){
+        target.innerHTML += text.charAt(i);
+        i++;
+
+        if(i >= text.length){
+            clearInterval(typing);
+        }
+    }, 150);
+
+    }
+    function goAbout() {
+        if(confirm("Go Go~~")){
+            location.href = "자기소개_최종.html";
+        }
+    }
+</script>
+
+</body>
+
+</html>

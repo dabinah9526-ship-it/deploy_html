@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>온라인 프로필</title>
+
+    <link rel="stylesheet" href="자기소개.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+
+            <img onclick="fnPopup3()" src="자두2.jpg.jpg" class="profile">
+           
+
+            <h2>Zaduuu</h2>
+            <p>코딩이 뭐죠...🤔</p>
+
+            <br>
+            <br>
+
+             <div id="detail">
+                <p>🌏 Incheon, Korea</p>
+                <p>📧 test@naver.com</p>
+                <p>📞 010.1234.9876</p>
+            </div>
+
+        <button onclick="showAlert()">
+            <i class="fa-brands fa-github"></i> Git
+        </button>
+
+        <button onclick="fnPopup()">
+            <i class="fa-brands fa-instagram"></i> SNS
+        </button>
+
+        <button onclick="fnPopup2()">
+            <i class="fa-solid fa-bolt"></i> click
+        </button>
+
+            <div class="clock">
+                <div id="date"></div>
+                <div id="time"></div>
+            </div>
+
+        </div>
+
+        <div class="right">
+
+            <h3>자기소개</h3>
+
+            <p>
+                <span class="highlight">프로그래밍</span> 열심히 공부하고 있습니다.<br>
+                HTML / CSS / Java 등을 배우며 개발자가 되기 위해 노력하고 있습니다.
+            </p>
+
+            <h3>Experience</h3>
+
+            <ul>
+                <li>아주아주아주아주 좋은 대학교
+                    <ul>
+                        <li>응용프로그램 개발(C#)</li>
+                        <li>모바일 App 개발</li>
+                        <li>반응형 웹</li>
+                    </ul>
+                </li>
+
+                <li>더조은 컴퓨터 학원
+                    <ul>
+                        <li>Spring 쇼핑몰 프로젝트</li>
+                        <li>Cloud 배포 경험</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>보유 기술</h3>
+                <div class="skills">
+                    <span onclick="showSkill('java')">Java</span>
+                    <span onclick="showSkill('oracle')">Oracle</span>
+                    <span onclick="showSkill('html')">HTML</span>
+                    <span onclick="showSkill('css')">CSS</span>
+                    <span onclick="showSkill('js')">JavaScript</span>
+                </div>
+                <div id="skillContent"></div>
+                 <div>
+      
+
+
+            </div>
+
+            <h3>Education</h3>
+
+            <table>
+                <tr>
+                    <th>학교</th>
+                    <th>전공</th>
+                    <th>기간</th>
+                    <th>구분</th>
+                </tr>
+
+                <tr>
+                    <td>바다건너어딘가 대학교</td>
+                    <td>경제경영</td>
+                    <td>2010.3 ~ 2013.2</td>
+                    <td>졸업</td>
+                </tr>
+
+                <tr>
+                    <td>고등학교</td>
+                    <td>-</td>
+                    <td>2007.3 ~ 2009.2</td>
+                    <td>졸업</td>
+                </tr>
+            </table>
+            <button onclick="goBack()">← back</button>
+
+        </div>
+        
+
+    </div>
+
+    <script>
+        function goBack() {
+            if (confirm("👈첫 페이지로 이동👈")) {
+                history.back();
+            }
+        }
+
+        function showAlert() {
+            if(confirm("Git 으로 이동!🏃")){
+                location.href = "https://github.com/";
+            }
+
+        }
+        function fnPopup(){
+            let result = confirm("🔒SNS 페이지로 이동하시겠습니까?🔒");
+
+            if(!result){
+                return; 
+            }
+
+            let top = (screen.availHeight - 300) / 2;
+            let left = (screen.availWidth - 600) / 2;
+
+            window.open(
+                "https://www.instagram.com/",
+                "SNS",
+                `width=600, height=300, left=${left}, top=${top}`
+            );
+        }
+         function fnPopup2(){
+            let result = confirm("🚨정말로 누르실건가요?🚨");
+
+            if(!result){
+                return; 
+            }
+
+            let top = (screen.availHeight-300) / 2;
+            let left = (screen.availWidth-600) / 2;
+
+            window.open(
+                "../../media/원두2.jpg.jpg",
+                "SNS", 
+                `width=600, height=300, left=${left}, top=${top}`
+            );
+        }
+        function fnPopup3(){
+            let top = (screen.availHeight-300) / 2;
+            let left = (screen.availWidth-600) / 2;
+
+            window.open(
+                "../../media/자두2.jpg.jpg",
+                "SNS", 
+                `width=600, height=300, left=${left}, top=${top}`
+            );
+        }
+
+
+        function showSkill(type){
+
+        let text = "";
+
+        if(type === "java"){
+            text = "Java 조금...?";
+        } else if(type === "oracle"){
+            text = "Oracle......";
+        } else if(type === "html"){
+            text = "HTML 어려워여";
+        } else if(type === "css"){
+            text = "CSS는 그게 뭐죵";
+        } else if(type === "js"){
+            text = "JavaScript....?";
+        }
+
+        let box = document.getElementById("skillContent");
+
+        box.innerHTML = text;
+        box.style.display = "block";  
+
+   
+        document.querySelectorAll(".skills span")
+        .forEach(s => s.classList.remove("active"));
+
+        event.target.classList.add("active");
+    }
+
+        setInterval(() => {
+            let datetime = new Date();
+            let year = datetime.getFullYear();
+            let month = datetime.getMonth() + 1;
+            let day = datetime.getDate();
+            let hour = datetime.getHours();
+            let minute = datetime.getMinutes();
+            let second = datetime.getSeconds();
+
+            if (minute < 10) minute = "0" + minute;
+            if (second < 10) second = "0" + second;
+
+            document.querySelector("#date").innerHTML =
+                year + "." + month + "." + day;
+
+            document.querySelector("#time").innerHTML =
+                hour + ":" + minute + ":" + second;
+                
+
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>
